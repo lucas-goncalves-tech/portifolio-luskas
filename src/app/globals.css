@@ -1,0 +1,220 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 97%;
+    --foreground: 0 0% 15%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 15%;
+    --primary: 25 30% 30%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 40% 80%;
+    --secondary-foreground: 25 35% 25%;
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 15%;
+    --destructive: 10 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 25 30% 30%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 0 0% 15%;
+    --sidebar-primary-foreground: 0 0% 97%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 70%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 40 10% 90%;
+    --card: 0 0% 13%;
+    --card-foreground: 40 10% 90%;
+    --popover: 0 0% 13%;
+    --popover-foreground: 40 10% 90%;
+    --primary: 40 35% 75%;
+    --primary-foreground: 200 20% 12%;
+    --secondary: 35 15% 22%;
+    --secondary-foreground: 40 35% 75%;
+    --muted: 0 0% 17%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 40 10% 90%;
+    --destructive: 10 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 10% 18%;
+    --input: 0 0% 30%;
+    --ring: 40 35% 75%;
+    --sidebar-background: 260 6% 12%;
+    --sidebar-foreground: 260 5% 95%;
+    --sidebar-primary: 230 60% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 5% 18%;
+    --sidebar-accent-foreground: 260 5% 95%;
+    --sidebar-border: 260 5% 18%;
+    --sidebar-ring: 260 5% 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+  
+  .glass-strong {
+    @apply bg-card/80 backdrop-blur-2xl border border-border/60;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .code-text {
+    font-family: var(--font-mono);
+  }
+
+  .glow-border {
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2),
+      0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  .dark .glow-border {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.2),
+      0 0 40px hsl(var(--primary) / 0.08);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 3s ease-in-out infinite 1s;
+  }
+
+  .animate-float-delayed-2 {
+    animation: float 3s ease-in-out infinite 2s;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer components {
+
+  
+
+  .dark .glass {
+    background: hsl(var(--card) / 0.4);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  /* Scroll progress bar */
+  .scroll-progress {
+    transform-origin: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 100;
+    background: hsl(var(--primary));
+  }
+
+  /* Typing cursor */
+  .typing-cursor::after {
+    content: "|";
+    animation: blink 1s infinite;
+    color: hsl(var(--primary));
+    font-weight: 300;
+  }
+
+  /* Rotating gradient border */
+  .rotating-border::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: conic-gradient(
+      hsl(var(--primary)),
+      hsl(var(--secondary)),
+      hsl(var(--primary) / 0.5),
+      hsl(var(--primary))
+    );
+    animation: rotate-gradient 4s linear infinite;
+    z-index: -1;
+  }
+
+  /* Stagger children */
+  .stagger-children > .animate-on-scroll:nth-child(1) { transition-delay: 0ms; }
+  .stagger-children > .animate-on-scroll:nth-child(2) { transition-delay: 80ms; }
+  .stagger-children > .animate-on-scroll:nth-child(3) { transition-delay: 160ms; }
+  .stagger-children > .animate-on-scroll:nth-child(4) { transition-delay: 240ms; }
+  .stagger-children > .animate-on-scroll:nth-child(5) { transition-delay: 320ms; }
+  .stagger-children > .animate-on-scroll:nth-child(6) { transition-delay: 400ms; }
+  .stagger-children > .animate-on-scroll:nth-child(7) { transition-delay: 480ms; }
+  .stagger-children > .animate-on-scroll:nth-child(8) { transition-delay: 560ms; }
+}
+
+/* Keyframes (precisam ficar fora de @layer) */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes rotate-gradient {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-on-scroll { opacity: 1; transform: none; transition: none; }
+  .animate-float, .animate-float-delayed, .animate-float-delayed-2 { animation: none; }
+  .rotating-border::before { animation: none; }
+  .typing-cursor::after { animation: none; }
+}
