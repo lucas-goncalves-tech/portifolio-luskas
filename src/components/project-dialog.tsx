@@ -140,21 +140,6 @@ export function ProjectDialog({
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <h4 className="mb-2 text-sm font-semibold text-foreground">
-                    Patterns Utilizados
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {project.architecture.patterns.map((p) => (
-                      <span
-                        key={p}
-                        className="rounded-md bg-accent px-2.5 py-1 font-mono text-xs text-accent-foreground"
-                      >
-                        {p}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </TabsContent>
             </Tabs>
           </div>

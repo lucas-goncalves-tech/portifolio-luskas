@@ -5,7 +5,6 @@ export interface Project {
   description: string;
   image: string;
   techs: string[];
-  category: string[];
   metrics: { label: string; value: string }[];
   details: {
     problem: string;
@@ -15,7 +14,6 @@ export interface Project {
   architecture: {
     diagram: string;
     decisions: string[];
-    patterns: string[];
   };
   images: { title: string; url: string }[];
   links: {
@@ -42,11 +40,12 @@ export const projects: Project[] = [
       "JWT",
       "Docker",
       "zod",
+      "vitest",
+      "supertest",
       "Scalar",
     ],
-    category: ["Node.js", "TypeScript", "Docker"],
     metrics: [
-      { label: "Endpoints", value: "30+" },
+      { label: "Endpoints", value: "20+" },
       { label: "Cobertura", value: "Zod 100%" },
       { label: "Documentação", value: "OpenAPI" },
     ],
@@ -70,19 +69,10 @@ export const projects: Project[] = [
         "Next.js (SSR + Client) -> Express API -> Prisma ORM -> PostgreSQL | Cloudinary (imagens)",
       decisions: [
         "Express com arquitetura em camadas (Controller → Service → Repository) para separação de responsabilidades",
+        "TDD com supertest e vitest para garantir cobertura real e confiança ao refatorar, com testes de integração isolados em db_test",
         "Prisma como ORM pela type-safety e migrations automáticas",
         "HTTP-only cookies para refresh e access tokens ao invés de localStorage por segurança",
         "Docker Compose para rodar facilmente web, api, db e db_test (para testes de integração sem afetar o db original) em ambiente local",
-      ],
-      patterns: [
-        "Repository Pattern",
-        "Service Layer",
-        "Controller Layer",
-        "DTO Validation (Zod)",
-        "Global error handling",
-        "Transaction Management",
-        "Dependency Injection",
-        "SSR com Server Fetch",
       ],
     },
     images: [
