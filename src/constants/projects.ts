@@ -113,7 +113,7 @@ export const projects: Project[] = [
       },
     ],
     links: {
-      github: "https://github.com",
+      github: "https://github.com/lucas-goncalves-tech/bookstore-fullstack",
       live: "https://example.com",
       docs: "https://example.com/docs",
     },
