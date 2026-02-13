@@ -22,7 +22,7 @@ export default function Page() {
         <About />
         <Projects />
         <Gallery />
-        {/*<Contact /> */}
+        <Contact />
       </main>
       <Footer />
     </>
