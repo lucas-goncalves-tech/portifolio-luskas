@@ -108,4 +108,60 @@ export const projects: Project[] = [
       docs: "https://example.com/docs",
     },
   },
+  {
+    id: "notes",
+    title: "Notes App",
+    subtitle: "Projeto fullstack",
+    description: "Aplicativo de anotações com sistema de autenticação.",
+    image: "/notes/home.png",
+    techs: [
+      "NextJS",
+      "Expressjs",
+      "TypeScript",
+      "better-sqlite3",
+      "JWT",
+      "zod",
+      "Swagger",
+    ],
+    metrics: [
+      { label: "Endpoints", value: "8" },
+      { label: "Cobertura", value: "Zod 100%" },
+      { label: "Documentação", value: "OpenAPI" },
+    ],
+    details: {
+      problem:
+        "Meu primeiro projeto fullstack, com intuito de aprender como o backend se comunica com o DB (sqlite) e como fazer sistema de autenticação.",
+      challenges:
+        "Por ser meu primeiro projeto, praticamente tudo que não fosse relacionado a JS/TS foi um desafio para mim, desde entender como usar SQL e criar uma conta de usuáro até a parte de login com JWT e funcionalidades CRUD",
+      features: [
+        "Autenticação JWT em cookies HTTP-only",
+        "CRUD completo de anotações",
+        "Validação de dados com Zod em todas as rotas",
+        "Documentação interativa da API com OpenAPI e Swagger",
+        "Graceful Shutdown para fechar conexão de forma segura",
+      ],
+    },
+    architecture: {
+      diagram:
+        "Next.js (SSR + Client) -> Express API -> better-sqlite3 -> sqlite",
+      decisions: [
+        "Express com arquitetura em camadas (Controller → Service → Repository) para separação de responsabilidades",
+        "HTTP-only cookies para access tokens ao invés de localStorage por segurança",
+      ],
+    },
+    images: [
+      { title: "Login", url: "/notes/login.png" },
+      { title: "Cadastro", url: "/notes/register.png" },
+      { title: "Home", url: "/notes/home.png" },
+      { title: "Filtro Baixa", url: "/notes/low-filter.png" },
+      { title: "Filtro Média", url: "/notes/medium-filter.png" },
+      { title: "Filtro Alta", url: "/notes/high-filter.png" },
+      { title: "Filtro Finalizado", url: "/notes/finished-filter.png" },
+    ],
+    links: {
+      github: "https://github.com/lucas-goncalves-tech/notes-fullstack",
+      live: "https://example.com",
+      docs: "https://example.com/docs",
+    },
+  },
 ];
