@@ -21,8 +21,8 @@ export default function Page() {
         <Hero />
         <About />
         <Projects />
-        {/*<Gallery />
-        <Contact /> */}
+        <Gallery />
+        {/*<Contact /> */}
       </main>
       <Footer />
     </>
