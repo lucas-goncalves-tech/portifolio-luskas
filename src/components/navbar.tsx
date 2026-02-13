@@ -66,10 +66,10 @@ export function Navbar() {
           className="group flex items-center gap-2 text-lg font-bold text-foreground"
         >
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-mono text-sm font-bold text-primary-foreground transition-transform group-hover:scale-105">
-            {"J"}
+            J
           </span>
           <span className="hidden font-mono text-sm text-muted-foreground sm:inline">
-            {"josé lucas.dev"}
+            josé lucas.dev
           </span>
         </a>
 
