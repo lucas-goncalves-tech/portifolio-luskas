@@ -38,7 +38,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         className="group relative h-auto w-full flex-col overflow-hidden rounded-xl border border-border bg-card p-0 text-left hover:bg-card hover:glow-border hover:shadow-lg focus-visible:ring-1 focus-visible:ring-ring"
         onClick={() => onSelect(project)}
       >
-        <div className="relative aspect-[16/10] w-full overflow-hidden">
+        <div className="relative aspect-video w-full overflow-hidden">
           <Image
             src={project.image || "/placeholder.svg"}
             alt={project.title}
@@ -57,7 +57,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           <h3 className="mb-1.5 text-lg font-bold text-foreground">
             {project.title}
           </h3>
-          <p className="mb-3 w-full text-left text-sm text-muted-foreground/80 truncate">
+          <p className="mb-3 text-sm text-muted-foreground/80 whitespace-normal">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-1.5">
