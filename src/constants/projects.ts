@@ -57,6 +57,7 @@ export const projects: Project[] = [
         "O maior desafio foi implementar transactions e impedir race conditions na parte de comprar um livro, e implementar pela primeira vez um cloud storage como Cloudinary para armazenar a thumbnail e a imagem full para a visualização do livro na página do mesmo.",
       features: [
         "Autenticação JWT com refresh token em HTTP-only cookies",
+        "Express rate-limiting no login, register e globalmente",
         "CRUD completo de livros com upload de imagens no Cloudinary",
         "Sistema de reviews com avaliações por estrelas",
         "Painel admin com dashboard de métricas e vendas",
@@ -136,6 +137,7 @@ export const projects: Project[] = [
         "Por ser meu primeiro projeto, praticamente tudo que não fosse relacionado a JS/TS foi um desafio para mim, desde entender como usar SQL e criar uma conta de usuáro até a parte de login com JWT e funcionalidades CRUD",
       features: [
         "Autenticação JWT em cookies HTTP-only",
+        "Express rate-limiting no login, register e globalmente",
         "CRUD completo de anotações",
         "Validação de dados com Zod em todas as rotas",
         "Documentação interativa da API com OpenAPI e Swagger",
