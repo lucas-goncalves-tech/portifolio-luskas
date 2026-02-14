@@ -48,6 +48,7 @@ export const projects: Project[] = [
       { label: "Endpoints", value: "20+" },
       { label: "Cobertura", value: "Zod 100%" },
       { label: "Documentação", value: "OpenAPI" },
+      { label: "Vitest coverage", value: "82%" },
     ],
     details: {
       problem:
