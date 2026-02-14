@@ -104,8 +104,8 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/lucas-goncalves-tech/bookstore-fullstack",
-      live: "https://example.com",
-      docs: "https://example.com/docs",
+      live: "https://bookstore-by-luskas.vercel.app/",
+      docs: "https://bookstore-fullstack-production.up.railway.app/api-docs",
     },
   },
   {
