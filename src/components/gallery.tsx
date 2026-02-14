@@ -37,7 +37,7 @@ function LazyImage({ src, alt, title, onClick }: LazyImageProps) {
       {
         rootMargin: "100px",
         threshold: 0.1,
-      }
+      },
     );
 
     if (imgRef.current) {
@@ -54,23 +54,21 @@ function LazyImage({ src, alt, title, onClick }: LazyImageProps) {
       className="relative w-full h-28 sm:h-32 md:h-36 p-0 rounded-none flex flex-col overflow-hidden"
     >
       <div ref={imgRef} className="relative w-full flex-1 min-h-0 bg-muted">
-        {!loaded && (
-          <Skeleton className="absolute inset-0 w-full h-full" />
-        )}
-        
+        {!loaded && <Skeleton className="absolute inset-0 w-full h-full" />}
+
         {isVisible && (
           <Image
             src={src || "/placeholder.svg"}
             alt={alt}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
-            className={`object-cover transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+            className={`object-cover transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
             loading="lazy"
             onLoad={() => setLoaded(true)}
           />
         )}
       </div>
-      
+
       <div className="w-full bg-muted/80 px-2 py-1.5 sm:py-2 z-10">
         <p className="text-[10px] sm:text-xs text-foreground font-medium truncate leading-tight">
           {title}
@@ -85,7 +83,7 @@ export function Gallery() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [activeProject, setActiveProject] = useState(projects[0]?.id || "");
 
-  const currentProject = projects.find(p => p.id === activeProject);
+  const currentProject = projects.find((p) => p.id === activeProject);
   const currentImages = currentProject?.images || [];
 
   const openLightbox = (index: number) => {
@@ -93,7 +91,7 @@ export function Gallery() {
     setLightboxOpen(true);
   };
 
-  const slides = currentImages.map(img => ({
+  const slides = currentImages.map((img) => ({
     src: img.url,
     alt: img.title,
     title: img.title,
@@ -129,7 +127,11 @@ export function Gallery() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Tabs value={activeProject} onValueChange={setActiveProject} className="w-full">
+          <Tabs
+            value={activeProject}
+            onValueChange={setActiveProject}
+            className="w-full"
+          >
             <ScrollArea className="w-full whitespace-nowrap mb-4 sm:mb-6">
               <TabsList className="inline-flex h-auto gap-1.5 sm:gap-2 bg-muted/50 p-1.5 sm:p-2 w-auto">
                 {projects.map((project) => (
@@ -159,9 +161,12 @@ export function Gallery() {
                       key={`${project.id}-${index}`}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: Math.min(index * 0.03, 0.3) }}
+                      transition={{
+                        duration: 0.3,
+                        delay: Math.min(index * 0.03, 0.3),
+                      }}
                     >
-                      <Card className="overflow-hidden border shadow-sm active:scale-95 transition-transform duration-150">
+                      <Card className="overflow-hidden border shadow-sm active:scale-95 transition-transform duration-150 hover:glow-border">
                         <CardContent className="p-0">
                           <LazyImage
                             src={image.url}
