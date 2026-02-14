@@ -43,6 +43,8 @@ export const projects: Project[] = [
       "vitest",
       "supertest",
       "Scalar",
+      "Cloudinary",
+      "Github Actions",
     ],
     metrics: [
       { label: "Endpoints", value: "20+" },
@@ -75,6 +77,8 @@ export const projects: Project[] = [
         "Prisma como ORM pela type-safety e migrations automáticas",
         "HTTP-only cookies para refresh e access tokens ao invés de localStorage por segurança",
         "Docker Compose para rodar facilmente web, api, db e db_test (para testes de integração sem afetar o db original) em ambiente local",
+        "Github Actions para rodar testes e lint automaticamente em cada push",
+        "Cloudinary para armazenar imagens de forma segura e escalável",
       ],
     },
     images: [
