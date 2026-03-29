@@ -134,21 +134,29 @@ export function Gallery() {
           >
             <ScrollArea className="w-full whitespace-nowrap mb-4 sm:mb-6">
               <TabsList className="inline-flex h-auto gap-1.5 sm:gap-2 bg-muted/50 p-1.5 sm:p-2 w-auto">
-                {projects.map((project) => (
-                  <TabsTrigger
-                    key={project.id}
-                    value={project.id}
-                    className="text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 sm:py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                  >
-                    {project.title}
-                  </TabsTrigger>
-                ))}
+                {projects
+                  .filter((p) => p.images.length > 0)
+                  .map((project) => (
+                    <TabsTrigger
+                      key={project.id}
+                      value={project.id}
+                      className="text-xs sm:text-sm px-2.5 sm:px-3 py-1.5 sm:py-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                    >
+                      {project.title}
+                    </TabsTrigger>
+                  ))}
               </TabsList>
               <ScrollBar orientation="horizontal" className="invisible" />
             </ScrollArea>
 
-            {projects.map((project) => (
-              <TabsContent key={project.id} value={project.id} className="mt-0">
+            {projects
+              .filter((p) => p.images.length > 0)
+              .map((project) => (
+                <TabsContent
+                  key={project.id}
+                  value={project.id}
+                  className="mt-0"
+                >
                 <div className="mb-3 sm:mb-4 flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                   <Images className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   <span>{project.images.length} imagens</span>

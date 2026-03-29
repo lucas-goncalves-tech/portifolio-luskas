@@ -21,9 +21,41 @@ export interface Project {
     live?: string;
     docs?: string;
   };
+  stack: "Express" | "Java";
 }
 
 export const projects: Project[] = [
+  {
+    id: "scaffolding-java",
+    title: "Em Breve (Java)",
+    subtitle: "Próximo projeto Java",
+    description: "Este projeto será uma implementação robusta utilizando Java e Spring Boot.",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
+    techs: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+    metrics: [
+      { label: "Status", value: "Em Planejamento" },
+    ],
+    details: {
+      problem: "Descrição do problema que este projeto irá resolver.",
+      challenges: "Desafios técnicos que pretendo superar.",
+      features: [
+        "Feature 1 - Descrição",
+        "Feature 2 - Descrição",
+      ],
+    },
+    architecture: {
+      diagram: "Diagrama da arquitetura (ex: Java -> Spring -> JPA -> Postgres)",
+      decisions: [
+        "Decisão arquitetural 1",
+        "Decisão arquitetural 2",
+      ],
+    },
+    images: [],
+    links: {
+      github: "https://github.com/lucas-goncalves-tech/",
+    },
+    stack: "Java",
+  },
   {
     id: "bookstore",
     title: "Bookstore",
@@ -63,7 +95,7 @@ export const projects: Project[] = [
         "CRUD completo de livros com upload de imagens no Cloudinary",
         "Sistema de reviews com avaliações por estrelas",
         "Painel admin com dashboard de métricas e vendas",
-        "Validação de dados com Zod em todas as rotas",
+        "Validação de dados with Zod em todas as rotas",
         "Documentação interativa da API com OpenAPI e Scalar",
         "Graceful Shutdown para fechar conexão de forma segura com o DB",
       ],
@@ -84,10 +116,8 @@ export const projects: Project[] = [
     images: [
       { title: "Login", url: "/bookstore/login.png" },
       { title: "Cadastro", url: "/bookstore/register.png" },
-      { title: "Home (Banner)", url: "/bookstore/home_banner.png" },
-      { title: "Home (Produtos)", url: "/bookstore/home_items_page.png" },
+      { title: "Home", url: "/bookstore/home.png" },
       { title: "Detalhes do Livro", url: "/bookstore/book.png" },
-      { title: "Avaliações", url: "/bookstore/book_review.png" },
       { title: "Carrinho", url: "/bookstore/cart.png" },
       { title: "Checkout", url: "/bookstore/checkout.png" },
       { title: "Pedido Finalizado", url: "/bookstore/finish_order.png" },
@@ -107,12 +137,33 @@ export const projects: Project[] = [
         title: "Criar Categoria (Admin)",
         url: "/bookstore/admin_create_categorie.png",
       },
+      {
+        title: "Usuários (Admin)",
+        url: "/bookstore/admin_users.png",
+      },
+      {
+        title: "Criar usuário (Admin)",
+        url: "/bookstore/admin_create_user.png",
+      },
+      {
+        title: "Editar senha do usuário (Admin)",
+        url: "/bookstore/admin_change_pass_user.png",
+      },
+      {
+        title: "Banir usuário (Admin)",
+        url: "/bookstore/admin_ban_user.png",
+      },
+      {
+        title: "Deletar permanentemente usuário (Admin)",
+        url: "/bookstore/admin_delete_user.png",
+      },
     ],
     links: {
       github: "https://github.com/lucas-goncalves-tech/bookstore-fullstack",
       live: "https://bookstore-by-luskas.vercel.app/",
       docs: "https://bookstore-fullstack-production.up.railway.app/api-docs",
     },
+    stack: "Express",
   },
   {
     id: "notes",
@@ -170,5 +221,6 @@ export const projects: Project[] = [
       live: "https://example.com",
       docs: "https://example.com/docs",
     },
+    stack: "Express",
   },
 ];
