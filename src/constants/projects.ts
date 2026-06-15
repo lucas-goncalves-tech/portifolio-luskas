@@ -62,7 +62,7 @@ export const projects: Project[] = [
     subtitle: "Projeto fullstack",
     description:
       "Livraria online com sistema de autenticação, carrinho de compras e checkout.",
-    image: "/bookstore/home_banner.png",
+    image: "/bookstore/home.png",
     techs: [
       "NextJS",
       "Expressjs",

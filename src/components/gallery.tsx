@@ -81,7 +81,8 @@ function LazyImage({ src, alt, title, onClick }: LazyImageProps) {
 export function Gallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [activeProject, setActiveProject] = useState(projects[0]?.id || "");
+  const projectsWithImages = projects.filter((p) => p.images.length > 0);
+  const [activeProject, setActiveProject] = useState(projectsWithImages[0]?.id || "");
 
   const currentProject = projects.find((p) => p.id === activeProject);
   const currentImages = currentProject?.images || [];

@@ -17,14 +17,14 @@ export function Projects() {
         >
           <div className="mb-3 flex items-center gap-2 font-mono text-sm text-primary">
             <Terminal className="h-4 w-4" />
-            <span>{"~/projetos"}</span>
+            <span>{"~/desenvolvimento"}</span>
           </div>
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl text-balance">
-            Projetos
+            Desenvolvimento Backend
           </h2>
           <p className="mt-3 max-w-xl text-base text-muted-foreground">
             {
-              "Uma seleção de projetos que demonstram minhas habilidades em backend, arquitetura de sistemas."
+              "Projetos de engenharia de software que consolidam minhas bases em desenvolvimento de sistemas e atestam minha capacidade de ler, escrever e auditar código."
             }
           </p>
         </motion.div>
