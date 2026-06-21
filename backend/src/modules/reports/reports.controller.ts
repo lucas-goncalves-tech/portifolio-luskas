@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import { z } from 'zod';
-import { ReportsService } from '../services/reports.service';
-
-const service = new ReportsService();
+import { injectable, inject } from 'tsyringe';
+import { ReportsService } from './reports.service';
 
 const createReportSchema = z.object({
   id: z.string().min(1),
@@ -17,10 +16,12 @@ const updateReportSchema = z.object({
   content: z.string().optional()
 });
 
+@injectable()
 export class ReportsController {
+  constructor(@inject(ReportsService) private service: ReportsService) {}
   async list(req: Request, res: Response) {
     try {
-      const reports = await service.listReports();
+      const reports = await this.service.listReports();
       res.json(reports);
     } catch (e) {
       res.status(500).json({ error: 'Internal server error' });
@@ -29,7 +30,7 @@ export class ReportsController {
 
   async get(req: Request, res: Response) {
     try {
-      const report = await service.getReport(req.params.id);
+      const report = await this.service.getReport(req.params.id);
       res.json(report);
     } catch (e) {
       res.status(404).json({ error: 'Report not found' });
@@ -39,7 +40,7 @@ export class ReportsController {
   async create(req: Request, res: Response) {
     try {
       const parsed = createReportSchema.parse(req.body);
-      const report = await service.createReport(parsed.id, parsed);
+      const report = await this.service.createReport(parsed.id, parsed);
       res.status(201).json(report);
     } catch (e) {
       if (e instanceof z.ZodError) {
@@ -53,7 +54,7 @@ export class ReportsController {
   async update(req: Request, res: Response) {
     try {
       const parsed = updateReportSchema.parse(req.body);
-      const report = await service.updateReport(req.params.id, parsed);
+      const report = await this.service.updateReport(req.params.id, parsed);
       res.json(report);
     } catch (e: any) {
       if (e instanceof z.ZodError) {
@@ -68,7 +69,7 @@ export class ReportsController {
 
   async delete(req: Request, res: Response) {
     try {
-      await service.deleteReport(req.params.id);
+      await this.service.deleteReport(req.params.id);
       res.status(204).send();
     } catch (e: any) {
       if (e.code === 'ENOENT') {

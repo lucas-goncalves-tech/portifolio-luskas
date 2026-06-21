@@ -1,25 +1,27 @@
 import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
+import { JwtService } from '../modules/auth/security/JwtService';
+import { UnauthorizedException } from '../core/exceptions/UnauthorizedException';
 
 interface AuthRequest extends Request {
   user?: any;
 }
 
+const jwtService = new JwtService();
+
 export const authMiddleware = (req: AuthRequest, res: Response, next: NextFunction): void => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    res.status(401).json({ error: 'Token missing' });
-    return;
+    throw new UnauthorizedException('Token missing');
   }
 
   const token = authHeader.split(' ')[1];
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'secret');
+    const decoded = jwtService.verifyAccessToken(token);
     req.user = decoded;
     next();
   } catch (error) {
-    res.status(401).json({ error: 'Token invalid' });
+    throw new UnauthorizedException('Token invalid');
   }
 };

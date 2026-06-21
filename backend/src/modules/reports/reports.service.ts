@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
+import { injectable } from 'tsyringe';
 
 const REPORTS_DIR = path.join(process.cwd(), 'reports');
 
@@ -11,6 +12,7 @@ export interface ReportData {
   [key: string]: any;
 }
 
+@injectable()
 export class ReportsService {
   private async ensureDir() {
     try {

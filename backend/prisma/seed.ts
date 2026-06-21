@@ -1,22 +1,25 @@
 import { PrismaClient } from '@prisma/client';
 import argon2 from 'argon2';
-import dotenv from 'dotenv';
-
-dotenv.config();
+import { env } from '../src/core/config/env';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  const email = process.env.ADMIN_EMAIL || 'admin@admin.com';
-  const password = process.env.ADMIN_PASSWORD || 'admin';
+  const email = env.ADMIN_EMAIL;
+  const password = env.ADMIN_PASSWORD;
+  const name = env.ADMIN_NAME;
 
   const hashedPassword = await argon2.hash(password);
 
   const admin = await prisma.user.upsert({
     where: { email },
-    update: {},
+    update: {
+      name,
+      password: hashedPassword,
+    },
     create: {
       email,
+      name,
       password: hashedPassword,
     },
   });

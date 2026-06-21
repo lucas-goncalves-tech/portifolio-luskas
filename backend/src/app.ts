@@ -18,10 +18,11 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-import { authRouter } from './routes/authRoutes';
-import reportsRouter from './routes/reports.routes';
+import authRouter from './modules/auth/auth.routes';
+import reportsRouter from './modules/reports/reports.routes';
 import { apiReference } from '@scalar/express-api-reference';
 import openApiDoc from './openapi.json';
+import { globalErrorHandler } from './core/middlewares/GlobalErrorHandler';
 
 // Health Check
 app.get('/health', (req: Request, res: Response) => {
@@ -46,7 +47,4 @@ app.use((req: Request, res: Response) => {
 });
 
 // Error Handler
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Internal Server Error' });
-});
+app.use(globalErrorHandler);
