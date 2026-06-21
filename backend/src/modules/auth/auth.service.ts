@@ -13,7 +13,7 @@ export class AuthService {
   constructor(
     @inject(UserRepository) private userRepository: UserRepository,
     @inject(AuthRepository) private authRepository: AuthRepository,
-    private jwtService: JwtService
+    @inject(JwtService) private jwtService: JwtService
   ) {}
 
   async login(data: LoginRequest): Promise<{ response: AuthResponse; refreshToken: string }> {
