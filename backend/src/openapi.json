@@ -1,0 +1,93 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Portfólio Luskas API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/auth/login": {
+      "post": {
+        "summary": "Login",
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      }
+    },
+    "/api/reports": {
+      "get": {
+        "summary": "Listar reports",
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar report",
+        "responses": {
+          "201": {
+            "description": "Criado"
+          }
+        }
+      }
+    },
+    "/api/reports/{id}": {
+      "get": {
+        "summary": "Obter report",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualizar report",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletar report",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      }
+    }
+  }
+}
