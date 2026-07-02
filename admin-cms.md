@@ -45,8 +45,3 @@ Migrar os dados estáticos do portfólio (`projects.ts` e `reports.ts`) para um 
 - **backend-engineer**: Para modelagem Prisma, Zod e Actions seguras.
 - **frontend-specialist**: Para criação das interfaces do CMS e refatoração da visualização na página inicial.
 - **security-auditor**: Para checar as defesas do auth, middleware e upload de arquivos.
-
-## 5. Perguntas Pendentes (Responda na próxima sessão)
-1. ORM favorito: Prisma ou Drizzle?
-2. Provedor de Banco de Dados preferido: Neon, Supabase ou hospedagem própria (Railway)?
-3. Storage para Imagens: Cloudinary ou AWS S3?
