@@ -60,7 +60,7 @@ export function Reports() {
 
         {/* Reports Grid */}
         {/* Tabs Filter */}
-        <Tabs defaultValue="Estudos & Certificações" className="w-full">
+        <Tabs defaultValue="Mundo Real" className="w-full">
           <ScrollArea className="w-full whitespace-nowrap mb-8">
             <TabsList className="inline-flex h-auto gap-1.5 sm:gap-2 bg-muted/50 p-1.5 sm:p-2 w-auto">
               {["Mundo Real", "Estudos & Certificações", "Custom Labs"].map((cat) => (
@@ -91,16 +91,10 @@ export function Reports() {
                     </p>
                   </div>
                 ) : (
-                  <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="grid gap-6 md:grid-cols-2"
-                  >
+                  <div className="grid gap-6 md:grid-cols-2">
                     {currentReports.map((report: SecurityReport) => (
-                      <motion.div
+                      <div
                         key={report.id}
-                        variants={itemVariants}
                         className={cn(
                           "group relative flex flex-col justify-between p-6 bg-card border rounded-sm transition-all duration-300",
                           "border-border/60 hover:border-primary/40"
@@ -186,9 +180,9 @@ export function Reports() {
                             </a>
                           )}
                         </div>
-                      </motion.div>
+                      </div>
                     ))}
-                  </motion.div>
+                  </div>
                 )}
               </TabsContent>
             );
