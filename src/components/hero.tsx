@@ -138,7 +138,7 @@ export function Hero() {
             style={{ animationDelay: "0.5s" }}
           >
             <Button size="lg" className="gap-2" asChild>
-              <a href="#relatorios">
+              <a href="#reports">
                 Ver Relatórios
                 <ArrowDown className="h-4 w-4" />
               </a>
