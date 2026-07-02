@@ -4,8 +4,8 @@
 Migrar os dados estáticos do portfólio (`projects.ts` e `reports.ts`) para um banco de dados relacional e construir um Painel Administrativo protegido para facilitar a gestão do conteúdo.
 
 ## 2. Decisões Arquiteturais e Stack
-- **ORM:** Prisma ORM (ou Drizzle)
-- **Banco de Dados:** PostgreSQL (via Neon Tech, Supabase ou Railway)
+- **ORM:** Prisma 6 ORM
+- **Banco de Dados:** PostgreSQL (via Neon Tech da vercel @.env.example)
 - **Autenticação:** Better Auth (Sessões HttpOnly)
 - **Segurança da Borda:** Next.js Middleware integrado com `@upstash/ratelimit` (Redis)
 - **Validação e Lógica:** React Server Actions + Zod
