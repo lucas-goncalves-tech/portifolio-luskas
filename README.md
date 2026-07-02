@@ -1,28 +1,12 @@
-# Luskas Portfólio & OSINT
+# Luskas Portfólio
 
-Este é um monorepo que abriga tanto o frontend em Next.js quanto o backend em Express + Prisma, estruturado para servir relatórios de pentest anonimizados.
+Portfólio pessoal de José Lucas — Pentester & Security Researcher.
 
-## Estrutura do Monorepo
-
-- `/frontend`: Aplicação Web Next.js.
-- `/backend`: API RESTful com Express, validada com Zod, Prisma e Autenticação (Argon2).
-- `/backend/reports`: Repositório de write-ups e relatórios em formato Markdown.
+Built with Next.js + Tailwind CSS + shadcn/ui.
 
 ## Como iniciar
 
-### Usando Docker
-Toda a infraestrutura (PostgreSQL 15, Backend Node 24, e Frontend) está orquestrada via Docker Compose:
 ```bash
-docker-compose up -d --build
+npm install
+npm run dev
 ```
-
-### Localmente (NPM Workspaces)
-1. Configure os arquivos `.env` baseados nos `.env.example`.
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Inicie os servidores de desenvolvimento:
-   ```bash
-   npm run dev
-   ```
