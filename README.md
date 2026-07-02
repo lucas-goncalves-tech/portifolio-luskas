@@ -1,12 +1,30 @@
-# Luskas Portfólio
+# luskas.io
 
-Portfólio pessoal de José Lucas — Pentester & Security Researcher.
+Portfólio pessoal — Pentest & Security Research.
 
-Built with Next.js + Tailwind CSS + shadcn/ui.
+Projetos reais de auditoria, relatórios de vulnerabilidade e laboratórios de segurança ofensiva.
 
-## Como iniciar
+## Stack
+
+Next.js 16 · Tailwind CSS · shadcn/ui · Framer Motion
+
+## Iniciar
 
 ```bash
 npm install
 npm run dev
 ```
+
+## Estrutura
+
+```
+src/
+├── app/            # Rotas e layout
+├── components/     # Seções do portfólio
+├── constants/      # Dados de projetos e labs
+└── lib/            # Utilitários
+```
+
+## Licença
+
+MIT

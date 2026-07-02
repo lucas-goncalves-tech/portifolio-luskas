@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const titles = [
-  "Desenvolvedor Back-end",
-  "Arquiteto de APIs",
-  "Apaixonado por segurança",
+  "Aspirante a Pentester",
+  "Background em Web Dev",
+  "Foco em Offensive Security",
 ];
 
 function useTypewriter(
@@ -62,13 +62,14 @@ const socialLinks = [
 ];
 
 const floatingTechs = [
-  { name: "Node.js", position: "top-4 -left-6", delay: "" },
-  { name: "TS", position: "top-1/3 -right-8", delay: "animate-float-delayed" },
+  { name: "Burp", position: "top-4 -left-6", delay: "" },
+  { name: "Caido", position: "top-1/3 -right-8", delay: "animate-float-delayed" },
   {
-    name: "Docker",
+    name: "Python",
     position: "bottom-8 -left-4",
     delay: "animate-float-delayed-2",
   },
+  { name: "Linux", position: "-bottom-4 right-4", delay: "animate-float" },
 ];
 
 export function Hero() {
@@ -126,9 +127,9 @@ export function Hero() {
             className="mb-8 max-w-lg text-base leading-relaxed text-muted-foreground animate-fade-in"
             style={{ animationDelay: "0.4s" }}
           >
-            Desenvolvedor Back-end apaixonado por arquitetura limpa, segurança e
-            código escalável. Sempre aprendendo e evoluindo. Em busca de uma
-            oportunidade para fazer a diferença.
+            Combinando uma base sólida em desenvolvimento web (Front e Back) com uma 
+            paixão implacável por Offensive Security. Estudando para ser Pentester e 
+            buscando minha primeira oportunidade na área de T.I.
           </p>
 
           {/* CTA buttons */}
@@ -137,8 +138,8 @@ export function Hero() {
             style={{ animationDelay: "0.5s" }}
           >
             <Button size="lg" className="gap-2" asChild>
-              <a href="#projetos">
-                Ver Projetos
+              <a href="#relatorios">
+                Ver Relatórios
                 <ArrowDown className="h-4 w-4" />
               </a>
             </Button>
@@ -174,7 +175,7 @@ export function Hero() {
             <div className="absolute inset-1 overflow-hidden rounded-full bg-background">
               <Image
                 src="/avatar.png"
-                alt="Lucas - Backend Developer"
+                alt="Lucas - Pentester / Security Researcher"
                 fill
                 className="object-cover object-center"
                 priority

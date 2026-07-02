@@ -1,54 +1,56 @@
 import {
-  Cloud,
-  Database,
-  FlaskConical,
-  Layout,
   Server,
   ShieldCheck,
   Terminal,
+  ShieldAlert,
+  Code2,
+  Crosshair,
+  Database,
+  Network
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Anos de experiência", value: 1, suffix: "+" },
-  { label: "Tecnologias aprendidas", value: 19, suffix: "+" },
+  { label: "Anos de estudo", value: 2, suffix: "+" },
+  { label: "Labs do PortSwigger", value: 40, suffix: "+" },
+  { label: "Desafios Juice Shop", value: 10, suffix: "+" },
 ];
 
 const techCategories = [
   {
-    title: "Backend",
+    title: "Backend Engineering",
     icon: Server,
-    items: ["Node.js", "Express", "NestJS", "Prisma"],
+    items: ["Java (Spring Boot)", "Node.js (Express)", "TypeScript"],
     span: "col-span-2 row-span-1",
   },
   {
-    title: "Database",
+    title: "Offensive Security",
+    icon: Crosshair,
+    items: ["Burp Suite", "Caido", "FFUF", "Nuclei"],
+    span: "col-span-1 row-span-1",
+  },
+  {
+    title: "Vulnerabilities",
+    icon: ShieldAlert,
+    items: ["OWASP Top 10", "API Top 10", "Active Directory", "Cloud"],
+    span: "col-span-1 row-span-1",
+  },
+  {
+    title: "Scripting & Auto",
+    icon: Terminal,
+    items: ["Python", "Asyncio", "Bash"],
+    span: "col-span-1 row-span-1",
+  },
+  {
+    title: "APIs & Auth",
+    icon: Network,
+    items: ["REST", "GraphQL", "JWT / OAuth2"],
+    span: "col-span-1 row-span-1",
+  },
+  {
+    title: "Infra & OS",
     icon: Database,
-    items: ["PostgreSQL", "MongoDB"],
-    span: "col-span-1 row-span-1",
-  },
-  {
-    title: "Frontend",
-    icon: Layout,
-    items: ["React", "Next.js", "TypeScript"],
-    span: "col-span-1 row-span-1",
-  },
-  {
-    title: "DevOps",
-    icon: Cloud,
-    items: ["Docker", "GitHub Actions", "Cloudinary"],
-    span: "col-span-1 row-span-1",
-  },
-  {
-    title: "Testing",
-    icon: FlaskConical,
-    items: ["Vitest", "Supertest"],
-    span: "col-span-1 row-span-1",
-  },
-  {
-    title: "Security",
-    icon: ShieldCheck,
-    items: ["JWT", "OAuth2", "Helmet", "CORS"],
+    items: ["PostgreSQL / SQLite", "Docker", "Linux"],
     span: "col-span-2 row-span-1",
   },
 ];
@@ -119,20 +121,20 @@ export function About() {
           >
             <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
               <motion.p variants={itemVariants}>
-                Olá, meu nome é José Lucas, comecei a estudar programação em
-                2024 explorando frontend e design, mas logo percebi que minha
-                vibe era outra — backend. Foi onde me senti entusiasmado com
-                programação de verdade.
+                Olá, meu nome é José Lucas. Comecei a estudar programação em 2024 explorando o
+                desenvolvimento web, onde construí uma base sólida entendendo como as aplicações
+                são feitas, desde o frontend até a arquitetura de APIs no backend.
               </motion.p>
               <motion.p variants={itemVariants}>
-                Desde então, tenho me dedicado a construir APIs robustas
-                aplicando clean code, princípios SOLID, TDD e boas práticas de
-                segurança e performance. Cada projeto é uma chance de aprender
-                algo novo e fazer melhor que o anterior.
+                No entanto, minha verdadeira paixão sempre foi a Segurança Ofensiva.
+                Hoje, utilizo essa minha "visão de desenvolvedor" para entender as engrenagens
+                dos sistemas e descobrir falhas que outras pessoas deixariam passar.
+                Meu foco atual é Web Application Security.
               </motion.p>
               <motion.p variants={itemVariants}>
-                Estou em busca da minha primeira oportunidade para colocar tudo
-                isso em prática e me tornar um especialista em backend.
+                Estou dedicado a concluir laboratórios práticos (PortSwigger, Juice Shop),
+                estudar para certificações (como a BSCP) e desenvolver minhas próprias ferramentas
+                em Python. Meu objetivo é conquistar minha primeira oportunidade como Pentester.
               </motion.p>
             </div>
 
