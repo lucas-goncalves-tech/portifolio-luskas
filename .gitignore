@@ -22,10 +22,29 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
+# Environment variables
 .env
-.env
+.env.local
+.env.development
+.env.test
+.env.production
+!.env.example
+
+# Databases (Prevenção de vazamento local)
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+
+# Secrets & Keys
+*.key
+.secrets/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # vercel
 .vercel
