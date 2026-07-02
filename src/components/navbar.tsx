@@ -1,15 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Download, Sun, Moon } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Início", href: "#inicio" },
   { label: "Sobre", href: "#sobre" },
-  { label: "Labs", href: "#labs" },
+  { label: "Relatórios", href: "#reports" },
   { label: "Desenvolvimento", href: "#projetos" },
   { label: "Galeria", href: "#galeria" },
   { label: "Contato", href: "#contato" },
@@ -19,7 +18,6 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("inicio");
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -95,21 +93,7 @@ export function Navbar() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-2">
-          {mounted && (
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full"
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Alternar tema"
-            >
-              {theme === "dark" ? (
-                <Sun className="size-6" />
-              ) : (
-                <Moon className="size-6" />
-              )}
-            </Button>
-          )}
+
 
           {/* Mobile hamburger */}
           <button
