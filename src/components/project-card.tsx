@@ -47,8 +47,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           />
           <div className="absolute inset-0 bg-foreground/0 transition-colors group-hover:bg-primary/30" />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity group-hover:opacity-100">
-            <span className="flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">
-              Ver Detalhes
+            <span className="flex items-center gap-2 rounded-full bg-primary/90 backdrop-blur-sm px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg">
+              🖼️ Explorar Telas ({project.images.length})
               <ArrowRight className="h-4 w-4" />
             </span>
           </div>

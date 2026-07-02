@@ -5,7 +5,6 @@ import { Hero } from "@/components/hero";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Reports } from "@/components/reports";
-import { Gallery } from "@/components/gallery";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 import { ScrollProgress } from "@/components/scroll-progress";
@@ -23,7 +22,6 @@ export default function Page() {
         <About />
         <Reports />
         <Projects />
-        <Gallery />
         <Contact />
       </main>
       <Footer />

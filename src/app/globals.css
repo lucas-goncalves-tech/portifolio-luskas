@@ -218,3 +218,8 @@ html {
   .rotating-border::before { animation: none; }
   .typing-cursor::after { animation: none; }
 }
+
+/* Correção para o Lightbox funcionar sobre o Drawer/Dialog (Radix pointer-events lock) */
+.yarl__portal, .yarl__root {
+  pointer-events: auto !important;
+}

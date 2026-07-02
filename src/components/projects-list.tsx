@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/constants/projects";
 import { ProjectCard } from "./project-card";
-import { ProjectDialog } from "./project-dialog";
+import { ProjectDrawer } from "./project-drawer";
 
 
 interface ProjectsListProps {
@@ -43,8 +43,8 @@ export function ProjectsList({ projects }: ProjectsListProps) {
         </AnimatePresence>
       </motion.div>
 
-      {/* Project dialog */}
-      <ProjectDialog
+      {/* Project drawer */}
+      <ProjectDrawer
         project={selectedProject}
         open={!!selectedProject}
         onOpenChange={(open) => !open && setSelectedProject(null)}
