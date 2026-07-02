@@ -43,15 +43,15 @@ export const projects: Project[] = [
     },
   },
   {
-    id: "scaffolding-java",
-    title: "Em Breve (Java)",
-    subtitle: "Próximo projeto Java",
-    description: "Este projeto será uma implementação robusta utilizando Java e Spring Boot.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
-    techs: ["Java", "Spring Boot", "PostgreSQL", "Docker"],
+    id: "notes-java",
+    title: "NoteMaster (Java)",
+    subtitle: "Projeto Fullstack (Monorepo)",
+    description: "Aplicativo de gerenciamento de notas construído com Spring Boot no backend e Next.js no frontend. Conta com infraestrutura PostgreSQL e Redis.",
+    image: "/placeholder.svg",
+    techs: ["Java", "Spring Boot", "NextJS", "PostgreSQL", "Redis", "Docker"],
     images: [],
     links: {
-      github: "https://github.com/lucas-goncalves-tech/",
+      github: "https://github.com/lucas-goncalves-tech/notes-fullstack-springboot",
     },
   },
   {
